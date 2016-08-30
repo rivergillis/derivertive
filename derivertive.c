@@ -9,10 +9,17 @@ int main(void)
 
 	// get the input string until it is correct
 	while ((add1 != '-' &&  add1 != '+') || (add2 != '-' && add2 != '+')) {
-		printf("Enter a trinomial of the form ax^A+bx^B+cx^C (you may also use '-')\n");
+		printf("Enter a trinomial of the form ax^A+bx^B+cx^C (you may also use '-')\ny=");
 		scanf("%dx^%d %c %dx^%d %c %dx^%d", &num1, &pow1, &add1, &num2, &pow2, &add2, &num3, &pow3);
 		printf("num1: %d; pow1 %d; add1 %c; num2 %d; pow2 %d; add2 %c; num3 %d pow3 %d\n", num1, pow1, add1, num2, pow2, add2, num3, pow3);
 	}
+	printf("Taking the derivative of y with respect to x...\n");
+
+	num1 *= pow1; pow1--;
+	num2 *= pow2; pow2--;
+	num3 *= pow3; pow3--;
+
+	printf("y'=%dx^%d %c %dx^%d %c %dx^%d\n", num1, pow1, add1, num2, pow2, add2, num3, pow3);
 	/*scanf("%2d:%2d", &hour, &min);
 
 	if (hour >= 12) {
